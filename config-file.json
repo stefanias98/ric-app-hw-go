@@ -1,14 +1,13 @@
 {
-    "xapp_name": "reply-xapp-hw",
-    "name": "reply-xapp-hw",
-    "version": "1.0.0",
+    "name": "replyxapp",
+    "version": "1.0.6",
     "containers": [
         {
-            "name": "hw-go",
+            "name": "replyxapp",
             "image": {
                 "registry": "docker.io",
-                "name": "stefanias98/reply-xapp-hw",
-                "tag": "1.0.0"
+                "name": "stefanias98/replyxapp",
+                "tag": "1.0.6"
             }
         }
     ],
@@ -32,19 +31,19 @@
         "ports": [
             {
                 "name": "http",
-                "container": "hw-go",
+                "container": "replyxapp",
                 "port": 8080,
                 "description": "http service"
             },
             {
                 "name": "rmrroute",
-                "container": "hw-go",
+                "container": "replyxapp",
                 "port": 4561,
-                "description": "rmr route port for hw-go xapp"
+                "description": "rmr route port for replyxapp xapp"
             },
             {
                 "name": "rmrdata",
-                "container": "hw-go",
+                "container": "replyxapp",
                 "port": 4560,
                 "rxMessages": ["RIC_SUB_RESP", "RIC_SUB_FAILURE", "RIC_SUB_DEL_RESP", "RIC_INDICATION"],
                 "txMessages": ["RIC_SUB_REQ", "RIC_SUB_DEL_REQ", "RIC_SGNB_ADDITION_REQ", "RIC_SGNB_ADDITION_ACK"],
@@ -52,8 +51,8 @@
                         {"name":"TESTNAME1","id":55555},
                         {"name":"TESTNAME2","id":55556}
                 ],
-                "policies": [1],
-                "description": "rmr data port for hw-go"
+                "policies": [2021],
+                "description": "rmr data port for replyxapp"
             }
         ]
     },
@@ -68,7 +67,7 @@
             "RIC_SUB_RESP",
             "A1_POLICY_REQ", "RIC_HEALTH_CHECK_REQ"
         ],
-    "policies": [1]
+    "policies": [2021]
     },
     "controls": {
             "fileStrorage": false
